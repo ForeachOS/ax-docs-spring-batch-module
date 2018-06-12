@@ -1,0 +1,13 @@
+= Module settings
+
+|===
+|Property |Type |Description |Default
+
+|springBatch.taskExecutor
+|`org.springframework.core.task.TaskExecutor`
+|The custom task executor to use for batch jobs.
+|_null_
+
+|===
+
+NOTE: Timestamps in property files should be provided in *yyyy-MM-dd HH:mm:ss* format.

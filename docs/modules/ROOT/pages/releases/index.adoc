@@ -1,0 +1,25 @@
+= SpringBatchModule releases
+
+[[module-artifact]]
+== Artifact
+
+[source,xml]
+----
+<dependencies>
+    <dependency>
+        <groupId>com.foreach.across.modules</groupId>
+        <artifactId>spring-batch-module</artifactId>
+    </dependency>
+</dependencies>
+----
+
+== Release notes
+
+SpringBatchModule follows a https://semver.org[semantic versioning] scheme.
+
+* xref:releases/1.x.adoc#1-0-1[1.0.1]
+
+[[module-dependencies]]
+== Module dependencies
+
+{module-name} does not have any dependencies on other modules.
