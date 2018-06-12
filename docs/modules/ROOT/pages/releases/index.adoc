@@ -22,4 +22,4 @@ SpringBatchModule follows a https://semver.org[semantic versioning] scheme.
 [[module-dependencies]]
 == Module dependencies
 
-{module-name} does not have any dependencies on other modules.
+SpringBatchModule does not have any dependencies on other modules.
