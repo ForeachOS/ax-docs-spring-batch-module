@@ -1,0 +1,88 @@
+= SpringBatchModule
+Arne Vandamme
+1.0.1.RELEASE
+:toc: left
+:sectanchors:
+:module-version: 1.0.1.RELEASE
+:module-name: SpringBatchModule
+:module-artifact: spring-batch-module
+:module-url: https://foreach.atlassian.net/wiki/display/AX/SpringBatchModule
+:spring-batch-url: http://projects.spring.io/spring-batch/
+
+[copyright,verbatim]
+--
+Copyright (C) 2014-2015 +
+[small]#Copies of this document may be made for your own use and for distribution to others, provided that you do not charge any fee for such copies and further provided that each copy contains this Copyright Notice, whether distributed in print or electronically.#
+--
+
+[abstract]
+== About
+The {module-name} activates support for {spring-batch-url}[Spring Batch] jobs.
+It takes care of creating the necessary Spring Batch related infrastructure for a database backed job store.
+Modules depending on the {module-name} can simply use the infrastructure beans and define or execute jobs.
+
+Module website: {module-url}
+
+:numbered:
+== General information
+
+=== Artifact
+[source,xml,indent=0]
+[subs="verbatim,quotes,attributes"]
+----
+	<dependencies>
+		<dependency>
+			<groupId>com.foreach.across.modules</groupId>
+			<artifactId>{module-artifact}</artifactId>
+			<version>{module-version}</version>
+		</dependency>
+	</dependencies>
+----
+
+=== Module dependencies
+{module-name} does not have any dependencies on other modules.
+
+=== Module settings
+
+|===
+|Property |Type |Description |Default
+
+|springBatch.taskExecutor
+|`org.springframework.core.task.TaskExecutor`
+|The custom task executor to use for batch jobs.
+|_null_
+
+|===
+
+== What's new in this version?
+:numbered!:
+=== 1.0.1.RELEASE
+Added support for H2 database.
+
+=== 1.0.0.RELEASE
+Initial public release available on http://search.maven.org/[Maven central].
+
+:numbered:
+== Default configuration
+The {module-name} will setup database backed Spring Batch support and will install the required schema when bootstrapping.
+
+Batch related infrastructure will be created and the following beans exposed:
+
+ * `JobRegistry`
+ * `JobRepository`
+ * `JobLauncher`
+ * `JobExplorer`
+ * `JobBuilderFactory`
+ * `StepBuilderFactory`
+
+Support for `@JobScope` and `@StepScope` annotations in other modules will also be enabled.
+Beans of type `Job` created in other modules will automatically be added to the `JobRegistry` in a group with the same name as the module that defined the job.
+
+== TaskExecutor
+By default the {module-name} will use a `SimpleJobLauncher` with an `SimpleAsyncTaskExecutor` that handles up to 5 jobs concurrently.
+If you want to change the `TaskExecutor` being used, you can do so through the *springBatch.taskExecutor* property.
+
+== Transaction manager
+By default the {module-name} will scan the `ApplicationContext` in order to find an appropriate `PlatformTransactionManager` bean.
+You can force a `PlatformTransactionManager` bean to be used by naming it *springBatchTransactionManager* and ensuring the {module-name} context can find it.
+
