@@ -1,8 +1,15 @@
 = 1.x.x release notes
 
+[#1-0-2]
+== 1.0.2.RELEASE
+
+* upgraded to xref:across:releases:core-artifacts/releases-3.x.adoc#3-2-0[Across 3.0.2]
+* added database compatibility with PostgreSQL and Microsoft SQL Server JDBC driver
+
 [#1-0-1]
 == 1.0.1.RELEASE
-Added support for H2 database.
+
+* added support for H2 database
 
 == 1.0.0.RELEASE
-Initial public release available on http://search.maven.org/[Maven central].
+* initial public release available on http://search.maven.org/[Maven central]
