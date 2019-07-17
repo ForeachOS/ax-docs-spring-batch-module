@@ -17,7 +17,7 @@
 
 SpringBatchModule follows a https://semver.org[semantic versioning] scheme.
 
-* xref:releases/1.x.adoc#1-0-1[1.0.1]
+* xref:releases/1.x.adoc#1-0-2[1.0.2]
 
 [[module-dependencies]]
 == Module dependencies
