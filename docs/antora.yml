@@ -1,5 +1,5 @@
 name: spring-batch-module
 title: "Module: Batch Processing"
-version: master
+version: 1.0.2
 nav:
 - modules/ROOT/nav.adoc
